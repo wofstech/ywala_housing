@@ -29,3 +29,8 @@ class ListingByUser(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         return Myhouses.objects.filter(author=self.request.user)
 
+def listbyuser (request):
+    house_list = Myhouses.objects.filter(author=request.user)
+
+
+    return render(request, 'houses/ListingByUser.html', {'house_list':house_list})
