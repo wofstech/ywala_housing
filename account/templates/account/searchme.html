@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}  
+{% load static %}
+<link rel='stylesheet' href='{% static "account/styles.css" %}'>
+    <section>
+        <div class='container'>
+            {% for element in results %}
+            <div class='searchview'>
+                <div class='writeups'>
+                    <a href="{% url 'search-detail' element.id %}"><li>{{ element }}</li></a>
+                </div>
+                
+                <div class='pic'>
+                    <img src='{{element.image.url}}' width='150px' height="150px" >
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endblock %}

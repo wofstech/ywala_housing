@@ -1,0 +1,241 @@
+body {
+    font-family: 'Ubuntu', serif;
+   
+  }
+
+.navbar{
+    margin-bottom: 0;
+    border-radius: 0;
+    background-color: #ffffff;
+    color:#286DA8;
+    padding: 1% 0;
+    font-size: 1.2em;
+    border:0;
+}
+
+.navbar-brand{
+    float: left;
+    min-height: 55px;
+}
+
+.navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover{
+    color: #000000;
+    background-color: #5E4485;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #FFC0CB;
+}
+
+.navbar-inverse .navbar-nav li a{
+    color: #328cc1;
+}
+
+#showcase{
+    background: 
+      /* top, transparent red */
+      linear-gradient(
+        rgba(73,78,104, 0.90),
+        rgba(73,78,104, 0.90)
+      ),
+      url("/static/account/city.jpg");
+      color: #ffffff;
+    min-height: 600px;
+    text-align: center;
+}
+
+#showcase h2{
+    margin-top: 200px;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+#intry{
+    padding: 10px;
+    border:none;
+    margin-left: 0;
+    font-size: 20px;
+
+}
+
+#sub1{
+    background: #286DA8;
+    border:none;
+    margin-right: 0;
+    padding:10px 30px 10px 30px;
+    color:#ffffff;
+    font-size: 20px;
+}
+
+#learnmore{
+    background: #286DA8;
+    border:none;
+    margin-right: 0;
+    padding:10px 30px 10px 30px;
+    color:#ffffff;
+    font-size: 20px;
+    margin-top: 7px;
+}
+
+.howworks{
+    margin-top: 60px;
+}
+
+.howworks h2{
+    margin-bottom: 40px;
+}
+
+.whyus1 h2{
+    margin-bottom: 40px;
+}
+
+.fa{
+    padding: 20px;
+    font-size: 30px;
+    color:#fff;
+}
+
+.fa:hover{
+    color: #000000;
+}
+
+#frow{
+    margin-bottom: 20px;
+}
+
+#howworks1{
+    font-size: 18px;
+}
+
+#whyus{
+    font-size: 18px;
+}
+
+#mfoot ul{
+    list-style-type: none;
+}
+
+#mfoot ul li{
+    padding: 7px;
+}
+ul.divider{
+    margin: 0em;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.myuserdetails{
+    margin: 0em;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.myuserdetails li{
+    padding: 4px;
+}
+
+#myinner{
+    padding: 20px
+}
+
+
+
+
+.outeruser{
+    width: 30%;
+    margin: auto;
+}
+
+.glyphicon.glyphicon-search, .glyphicon.glyphicon-cog, .glyphicon.glyphicon-pencil, .glyphicon.glyphicon-inbox, .glyphicon.glyphicon-lock, .glyphicon.glyphicon-usd, .glyphicon.glyphicon-ok, .glyphicon.glyphicon-eye-open, .glyphicon.glyphicon-phone, .glyphicon.glyphicon-flash, .glyphicon.glyphicon-bell, .glyphicon.glyphicon-thumbs-up{
+    font-size: 50px;
+}
+
+#lshowcase{
+    background: 
+      /* top, transparent red */
+      linear-gradient(
+        rgba(73,78,104, 0.90),
+        rgba(73,78,104, 0.90)
+      ),
+      url("/static/account/city.jpg");
+      color: #ffffff;
+    min-height: 600px;
+    text-align: center;
+}
+#sshowcase{
+    background: 
+      /* top, transparent red */
+      linear-gradient(
+        rgba(73,78,104, 0.90),
+        rgba(73,78,104, 0.90)
+      ),
+      url("/static/account/city.jpg");
+      color: #ffffff;
+    min-height: 600px;
+    text-align: center;
+}
+
+.scontainer h1{
+    margin-top: 20px;
+}
+
+.scontainer{
+    width: 30%;
+    margin: auto;
+}
+#lshowcase form{
+    margin-top: 200px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.dash{
+    margin-top: 10px;
+}
+
+#dashshowcase{
+    background: #d3d3d3;
+}
+
+#userlisting1{
+    background: #d3d3d3;
+}
+
+
+
+.dcontainer{
+    width: 70%;
+    margin: auto;
+}
+
+.dashcontainer1{
+    margin-top: 20px;
+    padding: 50px;
+}
+
+.help{
+    width:40%;
+    margin:auto;
+    padding: 30px;
+}
+
+ul.searchlist li{
+    display: inline;
+    padding: 30px;
+}
+
+.writeups{
+    float:left;
+}
+
+.pic{
+    float:right;
+}
+footer{
+    width: 100%;
+    background-color: #494e6b;
+    padding: 2%;
+    color: #fff; 
+    margin-top: 0; 
+    
+}

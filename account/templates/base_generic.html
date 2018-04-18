@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name='viewpoint' width='device-width'/>
+    <title>Helen's Story</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:italic">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+</head>
+
+<body>
+    
+        <nav class='navbar navbar-inverse'>
+                <div class='container-fluid'>
+                        <div class='navbar-header'>
+                                <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#MyNavBar'>
+                                    <span class='icon-bar'></span>
+                                    <span class='icon-bar'></span>
+                                    <span class='icon-bar'></span>
+                                </button>
+                                <a  class='navbar-brand' style="font-family: 'Tangerine', serif; font-size: 48px; color:#ffffff;">Helen's Story</a>
+                        </div>
+                        <div 'collapse navbar-collapse'  id='MyNavBar'> 
+                            <ul class='nav navbar-nav navbar-right' style="font-size: 20px;">
+                                <li class='active'><a href='#'>Home</a></li>
+                                <li><a href='#'>Contact</a></li>
+                                <li><a href='#'>About</a></li>
+                            </ul>
+                        </div>
+                </div>
+        </nav>
+       
+
+        {% block content %}
+        {% endblock %}
+        
+        <div id="header"> 
+            {% if messages %}
+            <ul class="messages">    
+                {% for message in messages %}      
+                <li class="{{ message.tags }}">        
+                    {{ message|safe }}          
+                    <a href="#" class="close">?</a>      
+                </li>    
+                {% endfor %}  
+            </ul>                     
+            {% endif %}
+
+    <span class="logo">Bookmarks</span> 
+    
+    {% if request.user.is_authenticated %}    
+        <ul class="menu">      
+            <li {% if section == "dashboard" %}class="selected"{% endif %}>        
+                <a href="{% url "dashboard" %}">My dashboard</a>      
+            </li>      
+            <li {% if section == "Messages" %}class="selected"{% endif %}>        
+                <a href="#">Images</a>      
+            </li>      
+            <li {% if section == "My Listings" %}class="selected"{% endif %}>        
+                <a href="#">People</a>      
+            </li>    
+        </ul>  
+    {% endif %}
+    
+    <span class="user">    
+        {% if request.user.is_authenticated %}      
+        Hello {{ request.user.first_name }},     
+        <a href="{% url "logout" %}">Logout</a>    
+        {% else %}      
+        <a href="{% url "login" %}">Log-in</a>    
+        {% endif %}  
+    </span
+        </div>  
+
+            
+</body>
+
+</html>

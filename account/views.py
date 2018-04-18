@@ -6,8 +6,12 @@ from django.contrib.auth.decorators import login_required
 from .models import Profile
 from django.contrib import messages
 from django.contrib.auth.models import User
+from houses.models import Myhouses
+from django.db.models import Q
+from django.views import generic
 
-
+def index(request):    
+    return render(request, 'account/index.html')
 
 def user_login(request):    
     if request.method == 'POST':        
@@ -70,26 +74,19 @@ def edit(request):
 
     return render(request, 'account/edit.html', {'user_form': user_form, 'profile_form': profile_form})
 
-@login_required
-def addhouses(request):    
-    if request.method == 'POST': 
-        form = HouseEditForm(request.POST, files=request.FILES)
-        if form.is_valid():           
-            Houses = form.save(commit=False)
-            Houses.save()
-            return redirect('addhouses')           
-    else:        
-        form = HouseEditForm()  
+def search(request):
+    query = request.GET.get('q')
+    results = Myhouses.objects.filter(Q(name_of_accomodation__icontains=query) | Q(type_of_room__icontains=query) | Q(location__icontains=query))
 
-    return render(request, 'account/addhouses.html', {'form':form }) 
+    return render(request, 'account/searchme.html', {'results': results})
 
-def test(request):
-    if request.method == "POST":
-        form = TrialForm(request.POST)
-        if form.is_valid():
-            trial = form.save(commit=False)
-            trial.save()
-            return redirect('test')
-    else:
-        form = TrialForm()
-    return render(request, 'account/trial.html', {'form': form})
+def search_detail(request, id):
+    search_list = Myhouses.objects.get(id = id)
+    context = {
+        'search_list': search_list
+    }
+
+    return render(request, 'houses/mysearch.html', context)
+    
+
+

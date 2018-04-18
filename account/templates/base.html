@@ -2,50 +2,75 @@
 <!DOCTYPE html> 
 <html> 
     <head>  
-        <title>{% block title %}{% endblock %}</title>  
+        <title>Ywala Housing</title>  
+        {% load static %}
+        
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:italic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         
     </head> 
     <body>  
-        <div id="header"> 
+        {% block header %}
+        <nav class='navbar navbar-inverse'>
+            <div class='container-fluid'>
+                    <div class='navbar-header'>
+                            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#MyNavBar'>
+                                <span class='icon-bar'></span>
+                                <span class='icon-bar'></span>
+                                <span class='icon-bar'></span>
+                            </button>
+                            <a  class='navbar-brand' style="font-family: 'Tangerine', serif; font-size: 48px; color:#000000;">Ywala Housing</a>
+                    </div>
+                    <div 'collapse navbar-collapse'  id='MyNavBar'> 
+                        <ul class='nav navbar-nav navbar-right' style="font-size: 20px;">
+                            <li >
+                                <a href='#'>
+                                    <span class='glyphicon glyphicon-user' aria-hidden="true"></span>
+                                    Register
+                                </a>
+                            </li>
+                            <li>
+                                <a href='#'>
+                                    <span class='glyphicon glyphicon-log-in' aria-hidden="true"></span>
+                                    Log-in
+                                </a>
+                            </li>
+                            <li>
+                                <a href='#'>
+                                    <span class='glyphicon glyphicon-home' aria-hidden="true"></span>
+                                    Rent an Apartment
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+    </nav>
+    {% endblock %}
+            <div id="header"> 
                 {% if messages %}
                 <ul class="messages">    
                     {% for message in messages %}      
                     <li class="{{ message.tags }}">        
                         {{ message|safe }}          
-                        <a href="#" class="close">✖</a>      
+                        <a href="#" class="close">?</a>      
                     </li>    
                     {% endfor %}  
                 </ul>                     
                 {% endif %}
-
-        <span class="logo">Bookmarks</span> 
-        
-        {% if request.user.is_authenticated %}    
-            <ul class="menu">      
-                <li {% if section == "dashboard" %}class="selected"{% endif %}>        
-                    <a href="{% url "dashboard" %}">My dashboard</a>      
-                </li>      
-                <li {% if section == "Messages" %}class="selected"{% endif %}>        
-                    <a href="#">Images</a>      
-                </li>      
-                <li {% if section == "My Listings" %}class="selected"{% endif %}>        
-                    <a href="#">People</a>      
-                </li>    
-            </ul>  
-        {% endif %}
-        
-        <span class="user">    
-            {% if request.user.is_authenticated %}      
-            Hello {{ request.user.first_name }},     
-            <a href="{% url "logout" %}">Logout</a>    
-            {% else %}      
-            <a href="{% url "login" %}">Log-in</a>    
-            {% endif %}  
-        </span
     </div>  
     <div id="content">    
-        {% block content %}    
+        {% block content %} 
         {% endblock %}  
     </div> 
+    <div>
+              
+    </div>
 </body> 
 </html>

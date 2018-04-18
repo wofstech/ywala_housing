@@ -3,8 +3,9 @@ from . import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [ 
-      #url(r'^login/$', views.user_login, name='login'), 
+ 
        url(r'^login/$', auth_views.login, name='login'),
+       url(r'^home$', views.index, name='index'),
        url(r'^logout/$', auth_views.logout, name='logout'),
        url(r'^logout-then-login/$', auth_views.logout_then_login, name='logout_then_login'),
        url(r'^$', views.dashboard, name='dashboard'), 
@@ -16,8 +17,10 @@ urlpatterns = [
        url(r'^password-reset/complete/$', auth_views.password_reset_complete, name='password_reset_complete'),
        url(r'^register/$', views.register, name='register'),
        url(r'^edit/$', views.edit, name='edit'),
-       url(r'^addhouses/$', views.addhouses, name='addhouses'),
-       url(r'^god/$', views.test, name='test'),
+       url(r'^result', views.search, name='searchme'),
+       url(r'^searchresult/(?P<id>\d+)/$', views.search_detail, name='search-detail'),
+       
+       
 
        
 ]
